@@ -1,12 +1,12 @@
-name = "hugo-webmonetization-demo"
+name = "hugo-webmonetization-theme"
 license = "MIT"
-licenselink = "https://github.com/sabinebertram/hugo-webmonetization-template/blob/master/LICENSE"
+licenselink = "https://github.com/sabinebertram/hugo-webmonetization-theme/blob/master/LICENSE"
 description = "A simple open source theme for publishing multi-purpose content that allows for webmonetization. Forked from https://github.com/onweru/newsroom."
-homepage = "https://github.com/sabinebertram/hugo-webmonetization-template"
+homepage = "https://github.com/sabinebertram/hugo-webmonetization-theme"
 tags = ["webmonetization", "blog", "simple", "dark", "minimalist", "fast", "disqus", "syntax highlighting"]
 features = ["webmonetization", "blog", "simple", "dark", "minimalist", "fast", "disqus", "syntax highlighting"]
 min_version = 0.42
 
 [author]
     name ="Sabine"
-    homepage = "https://github.com/sabinebertram/hugo-webmonetization-template"
+    homepage = "https://github.com/sabinebertram/hugo-webmonetization-theme"

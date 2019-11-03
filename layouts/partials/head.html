@@ -10,6 +10,7 @@
   {{- partial "analytics.html" . }}
   {{- partial "opengraph.html" . }}
   {{- partial "favicon.html" . }}
+  {{- partial "webmonetization.html" . }}
   <link rel='canonical' href='{{ .Permalink }}'>
   {{- $options := (dict "targetPath" "css/main.css" "outputStyle" "expanded" "enableSourceMap" "true") -}}
   {{- $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | resources.ToCSS $options | resources.Fingerprint "sha512" }}

@@ -1,0 +1,58 @@
+<meta name="monetization" content='{{ .Site.Params.monetization }}'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script>
+
+window.onload = function(){
+
+var monetizationStartEventOccurred = false;
+hideContent()
+
+var exclusiveError = '<p align=center> --- <i class="fa fa-lock"></i> Exclusive content. Click <a href="https://www.coil.com">here</a> to unlock. --- </p>'
+var exclusiveThanks = '<p align=center> --- <i class="fa fa-unlock"></i> Thank you for supporting me! --- </p>'
+
+// check if monetization is implemented
+if (document.monetization){
+  document.getElementById('exclusive').innerHTML = exclusiveError;
+  // monetization start event.
+  document.monetization.addEventListener('monetizationstart', function(event){
+    monetizationStartEventOccurred = true;
+    document.getElementById('exclusive').innerHTML = exclusiveThanks;
+    showContent()
+  });
+} else {
+  // hide content
+  document.getElementById('exclusive').innerHTML = exclusiveError;
+}
+
+function hideContent() {
+  var post = document.getElementsByClassName('post_inner')[0]
+  var children = post.childNodes;
+  var afterExclusive = false
+  for (let i = 0; i < children.length; i++){
+    var child = children[i]
+    if (child.nodeType != 1){
+      continue
+    } else {
+      if (!afterExclusive) {
+        if (child.attributes.id && child.attributes.id.textContent === 'exclusive'){
+          afterExclusive = true
+        }
+      } else {
+        child.style.display = 'none'
+        child.className = 'exclusiveTag'
+      }
+    }
+  }
+}
+
+function showContent() {
+  var hiddenChildren = document.getElementsByClassName('exclusiveTag')
+  for (let i = 0; i < hiddenChildren.length; i++) {
+    hiddenChildren[i].style.display = 'block'
+  }
+}
+
+}
+
+</script>
